@@ -5,10 +5,10 @@ Este repositorio contiene el contenido del Workshop 1. En este taller, explorare
 
 A continuación, se presentan los temas principales de este proyecto:
 
-1. :one: Annimaciones con CSS.
-2. :two: Transiciones con CSS.
-3. :three: Flexbox y Grid.
-3. :four: "Position absolute" y "position relative".
+1. Annimaciones con CSS.
+2. Transiciones con CSS.
+3. Flexbox y Grid.
+3. "Position absolute" y "position relative".
 
 ## Autor
 - [Nombre del Autor]
