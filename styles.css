@@ -1,0 +1,154 @@
+/* fuentes a utilizar */
+@import url('https://fonts.cdnfonts.com/css/zilla-slab');
+
+/* condiciones iniciales */
+/* las variables a utilizar en el css */
+
+/* pseudoclase- nos hace referencia a la raíz del documento */
+:root{
+    /* variables en css */
+    /* ponemos -- antentes del nombre de la variable */
+    --colorFondo:#EBE3D6;
+    --colorOscuro:#54351A;
+    --colorClaro:#c59f61;
+    --texto:'Zilla Slab', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    /* usamos variables de css */
+    font-family: var(--texto);
+}
+
+body{
+    width: 100vw;/* tamaño de pantalla */
+    background-color: var(--colorFondo);
+    box-sizing: border-box;
+    /* se va a respetar las dimensiones */
+    overflow-x: hidden;
+    /*si me sobresale el contenido  */
+}
+
+/* ------------HEADER--------- */
+/* sección contenedor top-header */
+.contenedor-header{
+    width: 100%;
+    height: 200px;
+    background-color: var(--colorClaro);
+    font-family: var(--texto);
+    font-size: 30px;
+    color: var(--colorOscuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* seccipon slider */
+.contenedor-slider{
+    border: solid var(--colorOscuro);
+    width: 80vw;
+    /* tamaño horizontal de mi pantalla */
+    height: 80vh;
+    /* tamaño vertical de mi pantalla */
+    overflow: hidden;
+    margin:50px auto;
+}
+.Slider{
+    display: flex;
+    animation-name: slide;
+    /* me nombra mi animación y me lo conecta con los keyframes */
+    animation-duration: 15s;
+    /* cuanto quiero que dure mi animación */
+    animation-iteration-count: infinite;
+    /* cuantas veces quiero que se repita mi animación */
+    animation-direction: alternate;
+    /* dirección de mi animación */
+    animation-timing-function: ease-in-out;
+    /* la forma en la que quiero que se vea la animación */
+}
+@keyframes slide {
+    0%{transform: translateX(0%);}
+    25%{transform: translateX(-100);}
+    50%{transform: translateX(-200%);}
+    75%{transform: translateX(-300%);}
+    100%{transform: translateX(-400%);} 
+}
+
+.Slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* ------------MAIN-------------*/
+.contenedor-grid{
+    width: 80%;
+    margin: auto;
+}
+.menuContent{
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Me crea 3 columnas de igual tamaño (1fr) */
+    grid-template-rows: 1fr 1fr;
+    /* Me crea 3 fila de igual tamaño (1fr) */
+}
+.menu{
+    position: relative;
+    overflow: hidden;
+}
+.menu a{
+    font-family: var(--texto);
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.images{
+    width: 100%;
+    height: auto;
+    opacity: 50%;
+    transition: all 4s ease-in-out;
+}
+
+/* Sección de íconos */
+.menuIcons{
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+right: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+.menuIcons h3{
+    margin-top: 20px;
+}
+/* hacemos hover en la etiqueta menu a, pero los cambios se ver reflejados en la clase .images */
+.menu a:hover .images{
+    transform: scale(1.2);
+}
+.menu a:hover .menuIcons img,
+.menu a:hover .menuIcons h3{
+    filter: invert(61%) sepia(85%) saturate(218%) hue-rotate(358deg) brightness(150%) contrast(95%);
+}
+
+/* -----------FOOTER---------- */
+.contenedor-footer{
+    display: block;
+    height: 100px;
+    background-color: var(--colorClaro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.contenedor-footer h3{
+    color: var(--colorOscuro);
+    font-size: 30px;
+}
